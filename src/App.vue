@@ -18,7 +18,7 @@ export default {
 html { min-height:100%; }
 body { 
   position: relative;; 
-  top:-22px; 
+  top:0; 
   bottom:0; 
   right:0; 
   left:0; 

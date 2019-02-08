@@ -14,62 +14,75 @@
       </section>
     </div>
     <div class="about-me" id="about-me">
-      <!-- <img src="../assets/profile.jpg" style="width: 100%; border-radius: 3%"> -->
-      <div class="persp-container">
-        <div class="persp-container-title">
-          <h2>About Me</h2>
-        </div>
-        <div class="persp-container-content">
-          <p>
-          Hi everyone, my name is Russel. I'm a Chinese-Indonesian who currently stay and work in Taiwan as a Software Engineer.
-          I have a passion for Blockchain related technologies and backend infrastructure.
-          Since i recently started to read books and fall in love with it,
-          i want to integrate my personal website with book review which everybody can share their experiences and recommend good books too.
-          Hope you guys like it :)
-          </p>
+      <div class="about-me-fluid">
+        <div class="about-me-wrapper">
+          <img src="../assets/profile.jpg" style="width: 300px; float:left; border: 3px solid white;">
+          <div class="persp-container">
+            <div class="persp-container-title">
+              <h2>About Me</h2>
+            </div>
+            <div class="persp-container-content">
+              <p>
+              Hi everyone, my name is Russel. I'm a Chinese-Indonesian who currently stay and work in Taiwan as a Software Engineer.
+              I have a passion for Blockchain related technologies and backend infrastructure.
+              Since i recently started to read books and fall in love with it,
+              i want to integrate my personal website with book review which everybody can share their experiences and recommend good books too.
+              Hope you guys like it :)
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
     <div class="skills-container" id="skills-container">
-      <div class="skills-wrapper">
+      <div class="skills-fluid">
+        <div class="skills-wrapper">
         <div class="tech-skills cell-child">
+          <v-icon x-large>build</v-icon>
           <div class="tech-skills-title">
             <h2>Software Development</h2>
           </div>
           <div class="tech-skills-content">
-            <ul>
-              <li>Tech Stack: Node.js, Golang, Solidity</li>
-              <li>Blockchain enthusiast, Backend developer, Front-end and Microservices learner</li>
-              <li></li>
-            </ul>
+            <p>
+              My tech stack, for programming languages are back-end [Node.js, Golang] front-end [Vue.js, React.js] (Both on junior level though XD). DevOps [Docker, Jenkins].
+              Cloud Services [AWS, GCP]. Blockchain [Solidity(Dapp), Ethereum, Hyperledger Fabric]
+            </p>
           </div>
         </div>
         <div class="goal cell-child">
+          <v-icon x-large>assignment</v-icon>
           <div class="goal-title">
             <h2>Goal</h2>
           </div>
           <div class="goal-content">
-            <ul>
-              <li>Create or participating on blockchain applications project</li>
-              <li>Improve English</li>
-              <li>Finish 1 book for every month</li>
-              <li>Continue master degree on either Europe or U.S</li>
-            </ul>
+            <p>
+              These goals that i set are the main goals that i should achieve for these 2 - 3 years. 
+              First is participating and finish the blockchain applications project in the work right now, 
+              then improve my english for my future master study's plan either on Europe or U.S. To achieve that,
+              my first step will be read more books. 
+            </p>
           </div>
         </div>
         <div class="hobby cell-child">
+          <v-icon x-large>fitness_center</v-icon>
           <div class="hobby-title">
             <h2>Leisure Time</h2>
           </div>
           <div class="hobby-content">
-            <ul>
-              <li>Gym</li>
-              <li>Playing Games</li>
-              <li>Read Books</li>
-              <li>Basketball</li>
-            </ul>
+            <p>
+              I usually go to gym twice a week after work, other than that i watch some videos on youtube
+              or movies. After i finish my book which is "The subtle art of not giving a f word", i realized why successful people read books.
+              So i told myself to develop a reading habit, finish 1 book per month.
+            </p>
           </div>
         </div>
+      </div>
+      </div>
+    </div>
+
+    <div class="book-list">
+      <div class="book-list-container">
+
       </div>
     </div>
   </div>
@@ -140,32 +153,19 @@ h3 {
   opacity: 0.3;
   transform: translateY(-50%);
 }
-.main-text {
-  height: 843px;
+.main-text, .about-me {
   width: 100%;
-  background-color: #e0ebe8;
   position: relative;
+}
+.main-text {
+  min-height: 100vh;
+  color: white;
   animation: fadein 2s;
   -moz-animation: fadein 2s; /* Firefox */
   -webkit-animation: fadein 2s; /* Safari and Chrome */
   -o-animation: fadein 2s; /* Opera */
 }
-#quotes {
-  font-size: 1.2em;
-  width: 80%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.about-me {
-  width: 100%;
-  height: 843px;
-  margin: 0 auto;
-  position: relative;
-  display: table;
-}
-.about-me::after {
+.main-text::after {
   content: "";
   background: url("../assets/bridge.jpg"); 
   opacity: 0.8;
@@ -180,38 +180,70 @@ h3 {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
-.about-me p {
-  display: table-cell;
-  vertical-align: middle;
-}
-.persp-container {
+#quotes {
+  font-size: 1.2em;
+  width: 80%;
   position: absolute;
-  padding: 25px;
-  right: 150px;
-  top: 100px;
-  width: 400px;
-  height: 250px;
-  background-color: white;
-  text-align: left;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-.skills-container {
+.about-me, .skills-container, .book-list  {
   width: 100%;
   height: 500px;
-  margin: 0 auto;
   position: relative;
+}
+.about-me {
+  background-color: #e0ebe8;
+}
+.skills-container {
   background-color: #fdf5e6;
-  display: table;
+}
+.book-list {
+  background-color: #b2cefe;
+}
+.persp-container {
+  /* display: inline-block; */
+  float: right;
+  width: 400px;
+  height: 250px;
+  /* background-color: white; */
+  text-align: left;
+}
+.skills-container::after {
+  content: "";
+  background: url("../assets/park.jpg"); 
+  opacity: 0.8;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 .skills-container .cell-child {
   display: inline-block;
-  text-align: left;
-  width: 450px;
+  vertical-align: top;
+  text-align: center;
+  width: 33%;
 }
 .skills-container .cell-child ul {
+  text-align: left;
   margin-block-start: 10px;
   padding-inline-start: 20px;
 }
-.skills-wrapper {
+.skills-fluid, .about-me-fluid {
+  height: inherit;
+  width: 900px;
+  margin: 0 auto;
+}
+.skills-wrapper, .about-me-wrapper {
+  height: inherit;
+  width: inherit;
   display: table-cell;
   vertical-align: middle;
 }
