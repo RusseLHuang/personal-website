@@ -1,11 +1,11 @@
 <template>
   <div class="autocomplete-container">
-    <input type="text" v-on:input="toggleChange()">
+    <input type="text" v-model="searchWord" v-on:input="get()">
     <div v-for="word in words" v-bind:key="word">
       <p>{{ word }}</p>
     </div>
-    <div v-for="h in helper" v-bind:key="h">
-      <h3>{{ h }}</h3>
+    <div v-for="w in completedWords" v-bind:key="w">
+      <h3>{{ w }}</h3>
     </div>
   </div>  
 </template>
@@ -16,31 +16,22 @@ import Component from 'vue-class-component';
 
 @Component({})
 export default class Autocomplete extends Vue {
-  private data() {
-    return {
-      trie: null,
-      words: [
-        'Abaddon',
-        'Ant',
-        'Bussiness',
-        'Chronology',
-        'Grit',
-        'Rough',
-        'Time',
-        'Zombie',
-      ],
-      helper: [],
-    };
+  private words = [
+    'Abaddon',
+    'Ant',
+    'Bussiness',
+    'Chronology',
+    'Grit',
+    'Rough',
+    'Time',
+    'Zombie',
+  ];
+  private searchWord: string = '';
+  private completedWords: string[] = [];
+  private trie: Trie = new Trie(this.words);
+  private get() {
+    this.completedWords = [...this.trie.get(this.searchWord)];
   }
-  // methods: {
-  //   toggleChange() {
-  //     this.trie.add("retarded");
-  //     console.log(this.trie);
-  //   }
-  // },
-  // async mounted() {
-  //   this.trie = new Trie(this.words);
-  // },
 }
 </script>
 <style>
