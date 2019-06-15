@@ -1,4 +1,4 @@
-# shortest-path
+
 
 ## Project setup
 ```
